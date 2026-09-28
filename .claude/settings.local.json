@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm run build)",
+      "PowerShell(php artisan tinker --execute=\"\\\\$idx = DB::select\\('SHOW INDEX FROM tiket_parkir'\\); foreach\\(\\\\$idx as \\\\$r\\){ echo \\\\$r->Key_name.' | '.\\(\\\\$r->Non_unique?'INDEX':'UNIQUE'\\).' | '.\\\\$r->Column_name.PHP_EOL; } echo '---'; \\\\$cols = DB::select\\('SHOW CREATE TABLE tiket_parkir'\\); echo PHP_EOL.\\\\$cols[0]->{'Create Table'};\" 2>&1 | Select-Object -First 200)",
+      "PowerShell(php artisan config:clear 2>&1)",
+      "PowerShell(Get-Content -LiteralPath \"frontend\\\\app\\\\pages\\\\petugas\\\\member\\\\edit\\\\[id].vue\" -Raw | Out-File -Encoding utf8 -FilePath \"$env:TEMP\\\\edit_raw.txt\"; \\(Get-Content -Raw \"$env:TEMP\\\\edit_raw.txt\"\\).Length)",
+      "PowerShell(Get-Content -LiteralPath \"frontend\\\\app\\\\pages\\\\petugas\\\\member\\\\index.vue\" -Raw | Set-Content -LiteralPath \"$env:TEMP\\\\member_index_backup.vue\" -Encoding utf8; Write-Host \"backup done\")"
+    ]
+  }
+}
